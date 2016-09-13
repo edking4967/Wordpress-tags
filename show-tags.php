@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Show tags
-Plugin URI: http://thousandonestories.com/
+Plugin URI: http://github.com/edking4967/wordpress-tags
 Description: Show tags at the top of a post.
 Version: 1.0
 Author: Edward King
-Author URI: http://twitter.com/edjamesking
+Author URI: http://github.com/edking4967
 License: GPL
 */
 
