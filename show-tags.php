@@ -15,15 +15,16 @@ add_filter('the_content','show_tags');
 function show_tags($content)
 {
     $posttags = get_the_tags();
+    $tags = "";
     if (in_category('Stories') && in_the_loop() && $posttags )
     {
         foreach($posttags as $tag) {
-            $content = $content . "<a href=\"stories/" . $tag->name . "\">";
-            $content = $content . "#" . $tag->name  ;
-            $content = $content . "</a> ";
+            $tags = $tags . "<a href=\"" . site_url() . "/stories/" . str_replace(' ', '-', $tag->name) . "\">";
+            $tags = $tags . "#" . $tag->name  ;
+            $tags = $tags . "</a> ";
          }
     }
-    return $content;
+    return $tags . $content;
 }
 
 ?>
