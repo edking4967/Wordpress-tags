@@ -14,12 +14,13 @@ add_filter('the_content','show_tags');
 //Callback function
 function show_tags($content)
 {
-    $posttags = get_the_tags();
+    $tag_url_base = "tag";
+    $posttags = get_the_tags(); // The base URL for tag pages, e.g. yoursite.wordpress.com/tag/example-tag
     $tags = "";
     if (in_category('Stories') && in_the_loop() && $posttags )
     {
         foreach($posttags as $tag) {
-            $tags = $tags . "<a href=\"" . site_url() . "/stories/" . str_replace(' ', '-', $tag->name) . "\">";
+            $tags = $tags . "<a href=\"" . site_url() . "/" . $tag_url_base . "/" . str_replace(' ', '-', $tag->name) . "\">";
             $tags = $tags . "#" . $tag->name  ;
             $tags = $tags . "</a> ";
          }
